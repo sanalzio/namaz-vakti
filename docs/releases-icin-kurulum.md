@@ -8,7 +8,7 @@
 
 ### GNU/Linux ve MacOS için
 
-1) [/releases](https://github.com/sanalzio/namaz-vakti/releases/latest) adresinden sisteminize uygun çalıştırılabilir dosyayı indirin.
+1) Aşağıdan sisteminize uygun çalıştırılabilir dosyayı indirin.
 2) İndirilen dosyanın bulunduğu dizinde bir terminal penceresi açın.
 3) Aşağıdaki komutları terminal penceresine yazın.
     
