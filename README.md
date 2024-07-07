@@ -4,7 +4,7 @@ Sizi sıcak terminal arayüzünden ayırmadan, belirlediğiniz mekan için namaz
 
 ## ✔ Kurulum
 
-### [-> Bu linke tıklayarak kurulum aşamalarına gidin. <-](https://github.com/sanalzio/binx/blob/master/docs/kurulum.md)
+### [-> Bu linke tıklayarak kurulum aşamalarına gidin. <-](https://github.com/sanalzio/namaz-vakti/blob/master/docs/kurulum.md)
 
 ## ▶ Kullanımı
 
