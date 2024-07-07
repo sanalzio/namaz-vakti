@@ -14,6 +14,14 @@ namaz
 ```
 komutu ile kullanabilirsiniz.
 
+Ayarlar ve proje hakkında bilgiler almak için;
+```bash
+namaz --info
+# yada
+namaz -i
+```
+şeklinde kullanabilirsiniz.
+
 ## ⚙ Ayarlar
 
 Programı ilk çalıştırdığınızda `~/.config/configstore/namaz-vakti.json` dosyasını oluşturur. Bu dosya program ayarlarını barındırır.
