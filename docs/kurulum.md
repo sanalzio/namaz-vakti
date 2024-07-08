@@ -17,7 +17,7 @@
     chmod +x /bin/namaz
     ```
 
-    > [!IMPORTANT]
-    > İlk komutdaki `<indirilen dosaynın ismi>` bölümünü indirdiğiniz dosyanın adı ile değiştirin.
+> [!IMPORTANT]
+> İlk komutdaki `<indirilen dosaynın ismi>` bölümünü indirdiğiniz dosyanın adı ile değiştirin.
 
 4) İşlem tamam. Terminal pencerenizi yeniden başlatıp `namaz` komutunu kullanmanız yeterli.
