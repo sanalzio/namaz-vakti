@@ -1,6 +1,6 @@
 {
   "name": "namaz-vakti",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Sizi sıcak terminal arayüzünden ayırmadan, belirlediğiniz mekan için namaz vakti hakkında bilgiler verir.",
   "main": "index.js",
   "scripts": {
@@ -13,7 +13,6 @@
   "author": "",
   "license": "GPL-3.0-only",
   "dependencies": {
-    "configstore": "^3.1.1",
-    "namaz-vakti": "."
+    "configstore": "^3.1.1"
   }
 }

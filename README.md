@@ -16,9 +16,9 @@ komutu ile kullanabilirsiniz.
 
 Ayarlar ve proje hakkında bilgiler almak için;
 ```bash
-namaz --info
+namaz --hakkında
 # yada
-namaz -i
+namaz -h
 ```
 şeklinde kullanabilirsiniz.
 
@@ -26,7 +26,27 @@ namaz -i
 
 Programı ilk çalıştırdığınızda `~/.config/configstore/namaz-vakti.json` dosyasını oluşturur. Bu dosya program ayarlarını barındırır.
 
+### 🔩 Ayarları görme
+
+Ayarlar hakkında bilgiler almak için;
+```bash
+namaz --ayarlar
+# yada
+namaz -a
+```
+şeklinde kullanabilirsiniz.
+
 ### 🛠 Ayarları değiştirme
+
+Ayarları aşağıdaki şekilde düzenleyebilirsiniz.
+
+```bash
+namaz --duzenle "<ayar ismi>" "<ayarın yeni değeri>"
+# yada
+namaz -d "<ayar ismi>" "<ayarın yeni değeri>"
+```
+
+### Ayarlar dosyasını düzenleme
 
 - Windows için, <kbd><kbd>Windows</kbd> + <kbd>R</kbd></kbd> tuş kombinasyonu ile açılan pencereye `%USERPROFILE%\.config\configstore\namaz-vakti.json` yazın ve <kbd>ENTER</kbd> tuşunu kullanın.
 
@@ -68,3 +88,13 @@ Detaylı açıklamalar için https://vakit.vercel.app/docs#timesFromPlace adresi
     "calculationMethod": "MuslimWorldLeague"
 }
 ```
+
+## ❓/✔ Bazı önemli sorular ve cevapları
+
+<details>
+<summary>Neden çok yavaş açılıyor?</summary>
+<hr>
+
+Bu proje bir JavaScript runtime'ı ile yazıldığı için proje kodunu çalıştırılabilir bir dosya haline getirmek için kodun çalışması için gerekli Bun dosyaları ve kod dosyaları arşivlenerek çalıştırılabilir bir dosya haline getiriliyor ve bilgisayar açıldığından beri ilk çalıştırıldığında arşiv geçici bir klasöre açılıyor ve kod çalıştırılıyor. **Bu nedenle ilk açılışta sizi biraz bekletiyor.** İlk açılıştan sonra artık daha hızlı açılmaya başlıyor. Ve bilgisayar her kapandığında bu geçici dosyalar siliniyor.
+<hr>
+</details>

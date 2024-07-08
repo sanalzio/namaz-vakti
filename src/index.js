@@ -64,6 +64,23 @@ function logInfo() {
 `);
 }
 
+// ayarlar hakkında bilgi verir
+function logSettings() {
+    console.log(`
+    ${Fore.Magenta}${pkg.name}${Fore.Reset}   ${Fore.BrightBlue}${pkg.version}${Fore.Reset}
+
+  ${Fore.Yellow}country: ${Fore.Reset}${conf.get('country')}
+
+  ${Fore.Yellow}region: ${Fore.Reset}${conf.get('region')}
+
+  ${Fore.Yellow}city: ${Fore.Reset}${conf.get('city')}
+
+  ${Fore.Yellow}timezoneOffset: ${Fore.Reset}${conf.get('timezoneOffset')}
+
+  ${Fore.Yellow}calculationMethod: ${Fore.Reset}${conf.get('calculationMethod')}
+`);
+}
+
 // istekten dönen verileri biçimlendirerek ve bazı işlemlerden geçirerek konsol ekranına (stdout'a) yazdırır
 function log(requestData) {
 
@@ -148,8 +165,19 @@ function log(requestData) {
 
 async function main() {
 
-    if (process.argv.includes("--info") || process.argv.includes("-i")) {
+    if (process.argv.includes("--hakkında") || process.argv.includes("-h")) {
         logInfo();
+        return 0;
+    } else if (process.argv.includes("--ayarlar") || process.argv.includes("-a")) {
+        logSettings();
+        return 0;
+    } else if (process.argv.includes("--duzenle") || process.argv.includes("-d")) {
+        if (conf.get(process.argv[3]) === undefined) {
+            console.log(`${Fore.Red}"${Fore.BrightRed}${process.argv[3]}${Fore.Red}" adında bir ayar bulunamadı.${Fore.Reset}`);
+            return 1;
+        }
+        conf.set(process.argv[3], process.argv[4]);
+        console.log(`${Fore.BrightGreen}"${Fore.Green}${process.argv[3]}${Fore.BrightGreen}" ayarı "${Fore.Green}${process.argv[4]}${Fore.BrightGreen}" olarak ayarlandı.${Fore.Reset}`);
         return 0;
     }
 
@@ -158,6 +186,17 @@ async function main() {
 
     // oluşturulan url üzerinden bir veri alma isteği gönder
     const request = await fetch(url);
+
+    // istekten dönen kodu bir sabite ata
+    const status = await request.status;
+
+    // eğer istekten dönen kod 200 değil yani istek başarılı değil ise
+    if (status !== 200) {
+        console.log(`${Fore.Red}Bir hata ile karşılaşıldı. Hata kodu: ${Fore.BrightRed}${status}${Fore.Reset}`);
+        console.log(`${Fore.Yellow}Tekrar deneyin.${Fore.Reset}`);
+        return status;
+    }
+
     // istekten dönen veriyi bir sabite ata
     const requestData = await request.json();
 
